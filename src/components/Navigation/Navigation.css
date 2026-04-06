@@ -1,0 +1,12 @@
+nav > ul {
+	list-style-type: none;
+	display: flex;
+	gap: 0.5rem;
+	padding: 1rem;
+}
+
+nav button {
+	display: flex;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}

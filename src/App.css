@@ -1,0 +1,89 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: sans-serif;
+	color-scheme: dark only;
+}
+
+#app {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.loader {
+	width: calc(80px / cos(45deg));
+	height: 14px;
+	background: repeating-linear-gradient(-45deg,#fff 0 15px,#fff0 0 20px) left/200% 100%;
+	animation: l3 2s infinite linear;
+}
+@keyframes l3 {
+	100% {background-position:right}
+}
+
+.inputs {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.books {
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	padding: 1rem;
+	width: 100%;
+}
+
+.books > li {
+	border: 1pt solid white;
+	width: calc((100% - 2rem) / 3);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.category {
+	padding: 0.5rem;
+	background-color: #fff1;
+}
+
+.loadMore {
+	display: flex;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.pagination {
+	display: flex;
+	list-style-type: none;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.pagination button {
+	font-family: sans-serif;
+	display: flex;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	background-color: fff0;
+	border: none;
+	border-radius: 0.125rem;
+}
+
+.pagination button.current {
+	background-color: #fffa;
+	color: #000;
+	font-weight: bold;
+}
