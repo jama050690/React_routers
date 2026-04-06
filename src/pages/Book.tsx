@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react"
+import { useContext } from "react"
 import { useParams } from "react-router"
 import { Navigation } from "../components/Navigation"
 
@@ -7,22 +7,9 @@ import { BooksContext } from "../contexts/BooksContext"
 export function Book() {
 
 	const { id } = useParams()
-
-	const books = useContext( BooksContext )
-	const [ book, setBook ] = useState( null )
-
-	function getBookById( id ) {
-
-		return books.find( b => b.id === id ) || null
-	}
-
-	useEffect( () => {
-
-		const book = getBookById( id - 0 )
-
-		setBook( book )
-
-	}, [] )
+	const booksContext = useContext( BooksContext )
+	const book =
+		booksContext?.books.find( currentBook => currentBook.id === Number( id ) ) ?? null
 
 	return (
 		<>
